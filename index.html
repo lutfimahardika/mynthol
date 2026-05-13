@@ -937,8 +937,8 @@ function generateReport(){
   for(let area in grouped){
     text+=`\n*${area}*\n`;
     for(let mesin in grouped[area]){
-      text+=`*${mesin}*\n`;
-      grouped[area][mesin].forEach(d=>{ text+=`> ${d.downtime}\n`; d.action.split("\n").forEach(l=>{if(l.trim())text+=`  - ${l}\n`;}); });
+      text+=`**${mesin}*\n`;
+      grouped[area][mesin].forEach(d=>{ text+=`> ${d.downtime}\n`; d.action.split("\n").forEach(l=>{if(l.trim())text+=` - ${l}\n`;}); });
     }
   }
   const checked=checkedItems.map(i=>checklistItems[i]);
